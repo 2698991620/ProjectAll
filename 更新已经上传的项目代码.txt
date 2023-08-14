@@ -1,0 +1,19 @@
+1、新建一个文件夹并进入
+
+cd 文件夹地址
+2、给文件夹创建 git
+
+git init
+3、下拉 github 项目代码
+
+git pull 【git项目地址】 master
+4、更新代码
+5、添加所有代码到缓冲区
+
+git add .
+6、提交代码
+
+git commit -m "更新说明"
+7、将更新的代码上传到 github
+
+git push 【git项目地址】 master

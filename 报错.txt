@@ -1,0 +1,30 @@
+fatal: remote origin already exists.
+
+原因
+你已经将一个远程仓库添加并命名为origin了，所以现在你是在尝试将另一个远程仓库添加并命名为origin，显然这是一个错误，一个origin怎么指向两个仓库呢？git显然也不能直接帮你进行”喜新厌旧“直接把以前添加的远程仓库给弃了，所以如果你不需要以前添加的仓库就直接删了（方法一和方法二），如果你还得保留以前添加的远程仓库，那你得换个名字添加远程仓库（方法三）
+
+git remote add origin git@github.com:your_username/your_repository.git
+fatal: remote origin already exists.
+
+解决
+方法一
+使用set-url修改origin仓库的url
+
+git remote set-url origin git@github.com:your_username/your_repository.git
+
+方法二
+先将已经添加过的，命名为origin的远程仓库给删了，然后重新添加
+
+git remote rm origin
+git remote add origin git@github.com:your_username/your_repository.git
+
+方法三
+既然你已经将origin指向了某个远程仓库，那现在你换个名字指向另一个远程仓库就可以了
+
+git remote add origin2 git@github.com:your_username/your_repository.git
+
+这种方法的话，push的时候就需要
+
+git push origin2 master
+
+意思是把本地的修改提交到远程仓库origin2的master分支里面去。

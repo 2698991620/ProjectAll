@@ -1,0 +1,23 @@
+git init
+初始化成功后你会发现项目里多了一个隐藏文件夹.git
+
+这个目录是Git用来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。
+
+接着，将所有文件添加到仓库
+
+执行指令：git add .
+
+然后，把文件提交到仓库，双引号内是提交注释。
+
+执行指令：git commit -m "提交文件"
+如此本地仓库建立好了。
+
+4-3 关联github仓库
+到github wyj_first仓库复制仓库地址
+然后执行指令：git remote add origin git@github.com:gain-wyj/wyj_first.git
+
+4-4 上传本地代码
+执行指令：git push -u origin master
+
+1）敲一个：yes， 然后回车
+到此，本地代码已经推送到github仓库了，我们现在去githubt仓库看看。
